@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">StudyKotlin</string>
+    <string name="add_task">Add a task</string>
+    <string name="description">Enter task description:</string>
+    <string name="done">Done</string>
+    <string name="action_settings">Settings</string>
+</resources>
