@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     private val TAG = "TAG";
     // In the case that we don’t want to return any value in Java we would use “void”, here the alternative is “Unit” which works in the same way.
-    override fun onCreate(savedInstanceState: Bundle?) : Unit {
+    override fun onCreate(savedInstanceState: Bundle?): Unit {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
 //      info - You can specify the type explicitly:
         // Maybe you notice that there are no primitive types, we don’t use “double” but “Double”.
         // This is because everything in Kotlin is an object. For performance, the compiler will transform some of these objects to primitive types internally.
-        val lastname : String = "Keddit" // explicit type definition
-        var size : Double = 30.0
-        var time : Float = 15f
+        val lastname: String = "Keddit" // explicit type definition
+        var size: Double = 30.0
+        var time: Float = 15f
 
         // info In Kotlin you access properties like accessing a field in Java. Instead of calling the getResources() method from an Activity you directly do:
         resources.getString(R.string.app_name)
@@ -51,12 +51,12 @@ class MainActivity : AppCompatActivity() {
 
 //        val a : String = null  // don't compile!
 //        var b : Int          // neither as must be initialized or abstract.
-        val ok : String? = null // OK :)
+        val ok: String? = null // OK :)
 
         // info - ko crash
         // To interact with a nullable object is really easy, the “?” question mark will allow you to get the value just in case it exists,
         // otherwise it will ignore it and you are safe to continue running the program:
-        val context : Context? = null
+        val context: Context? = null
         val res = context?.getResources() // not crash, res will be null
 
         val appName = res?.getString(R.string.app_name)
@@ -114,6 +114,11 @@ class MainActivity : AppCompatActivity() {
             changeFragment(NewsFragment())
         }
 
+        val firstName: String? = "Adam"
+        val lastName: String = firstName
+
+        val firstName2: String? = "Adam"
+        val lastName2: String = firstName!!
     }
 
     fun changeFragment(f: Fragment, cleanStack: Boolean = false) {
@@ -155,7 +160,7 @@ class MainActivity : AppCompatActivity() {
 
 //    fun add(a : Int, b : Int) = a + b
 
-    fun add(a : Int) : (Int) -> Int{
+    fun add(a: Int): (Int) -> Int {
         return { x -> a + x }
     }
 }
