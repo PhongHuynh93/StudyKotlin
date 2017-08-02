@@ -7,6 +7,10 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Kotlin Android Extensions: Say goodbye to findViewById (KAD 04)
+ * <a href="https://antonioleiva.com/kotlin-android-extensions/">
+ */
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
