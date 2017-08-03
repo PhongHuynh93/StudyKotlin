@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import bizconcierge.dms.studykotlin.R
+import bizconcierge.dms.studykotlin.commons.RedditNews
 import bizconcierge.dms.studykotlin.commons.RxBaseFragment
 
 
@@ -15,7 +16,7 @@ import bizconcierge.dms.studykotlin.commons.RxBaseFragment
  * A simple [Fragment] subclass.
  */
 class NewsFragment : RxBaseFragment() {
-
+    private var redditNews : RedditNews
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

@@ -114,11 +114,11 @@ class MainActivity : AppCompatActivity() {
             changeFragment(NewsFragment())
         }
 
-        val firstName: String? = "Adam"
-        val lastName: String = firstName
+//        val firstName: String? = "Adam"
+//        val lastName: String = firstName
 
         val firstName2: String? = "Adam"
-        val lastName2: String = firstName!!
+        val lastName2: String = firstName2!!
     }
 
     fun changeFragment(f: Fragment, cleanStack: Boolean = false) {
