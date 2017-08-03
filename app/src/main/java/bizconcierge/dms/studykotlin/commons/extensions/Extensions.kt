@@ -20,6 +20,8 @@ container?.inflate(R.layout.news_fragment)
 
 What we are doing here is to add a new method to ViewGroup (see how we add the ViewGroup with a dot before the “inflate” method name) but we are not modifying the ViewGroup class but adding a new function. This function will be internally a static method but you will be calling it from an instance of a class with the dot-notation, in this case: container.inflate(…) and not ViewGroup.inflate(). This is because the compiler will be creating a Util class for us.
  */
+// info - In Kotlin you are able to define default values in the parameters of a function
+// info Inside the code block it’s like you are writing code as it is a real new method of the class (like a regular method) that’s why you can access to the instance of the class with the “this” keyword and access to the local variable “context”.
 fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View {
     return LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)
 }
