@@ -3,20 +3,24 @@ package bizconcierge.dms.studykotlin.features.news
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import bizconcierge.dms.studykotlin.App
 
 import bizconcierge.dms.studykotlin.R
 import bizconcierge.dms.studykotlin.commons.RedditNews
 import bizconcierge.dms.studykotlin.commons.RxBaseFragment
+import kotlinx.android.synthetic.main.fragment_news.*
 
 
 /**
  * A simple [Fragment] subclass.
  */
 class NewsFragment : RxBaseFragment() {
-    private var redditNews : RedditNews
+    private var redditNews : RedditNews? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -29,7 +33,10 @@ class NewsFragment : RxBaseFragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         // info - lúc này thì inflater ko có null
-        return inflater!!.inflate(R.layout.fragment_news, container, false)
+        val view = inflater!!.inflate(R.layout.fragment_news, container, false)
+        news_list?.setHasFixedSize(true)
+        news_list.layoutManager = LinearLayoutManager(context)
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
